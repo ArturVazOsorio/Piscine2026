@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_is_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: artur <arturvitorantelavazosorio@gmail.co  +#+  +:+       +#+        */
+/*   By: artur <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/28 09:58:26 by artur             #+#    #+#             */
-/*   Updated: 2026/01/30 01:28:18 by artur            ###   ########.fr       */
+/*   Created: 2026/01/30 01:59:33 by artur             #+#    #+#             */
+/*   Updated: 2026/01/30 02:06:19 by artur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-/*FUNCAO PARA IMPRESSAO DE CARACTERES*/
+
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
+void	ft_is_negative(int	n)
+{
+	if (n >= 0)
+		ft_putchar('P');
+	else
+		ft_putchar('N');
+}
+
 /*int	main(void)
 {
-	ft_putchar('a');
-	ft_putchar('b');
-	ft_putchar('c');
-	ft_putchar('\n');
-	return (0);
+	ft_is_negative(6);
+	ft_is_negative(9);
+	ft_is_negative(-6);
+	ft_is_negative(0);
+	ft_is_negative(26);
+	ft_is_negative(-26);
 }*/

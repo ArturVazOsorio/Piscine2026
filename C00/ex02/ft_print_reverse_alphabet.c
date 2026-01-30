@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: artur <arturvitorantelavazosorio@gmail.co  +#+  +:+       +#+        */
+/*   By: artur <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/28 09:58:26 by artur             #+#    #+#             */
-/*   Updated: 2026/01/30 01:28:18 by artur            ###   ########.fr       */
+/*   Created: 2026/01/30 01:43:49 by artur             #+#    #+#             */
+/*   Updated: 2026/01/30 01:51:53 by artur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-/*FUNCAO PARA IMPRESSAO DE CARACTERES*/
+
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
+void	ft_print_reverse_alphabet(void)
+{
+	char	letter;
+
+	letter = 'z';
+	while (letter >= 'a')
+	{
+		ft_putchar(letter);
+		letter--;
+	}
+}
 /*int	main(void)
 {
-	ft_putchar('a');
-	ft_putchar('b');
-	ft_putchar('c');
-	ft_putchar('\n');
-	return (0);
+	ft_print_reverse_alphabet();
+	return(0);
 }*/
