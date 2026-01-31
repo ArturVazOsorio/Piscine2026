@@ -2,4 +2,4 @@ echo -n "42" > '"\?$*'"'MaRViN'"'*$?"'
 
 echo -n "42" recebe apenas 42 sem "\n" newline
 
-'"?$*'|"|'NaRViN'|"|'*$?"'| faz a divisao usando '()'para protecao de cada parte e (") e usando como separador de cada parte 
+'"?$*'|"|'MaRViN'|"|'*$?"'| faz a divisao usando '()'para protecao de cada parte e (") e usando como separador de cada parte 
