@@ -1,0 +1,8 @@
+#!/bin/sh
+find . -type f \( -name "*~" -o -name "#*#" \) -print -exec rm -f {} +
+
+
+#find .: Procura no diretório atual e subdiretórios.
+##-type f: Garante que apenas ficheiros (e não pastas) sejam processados.
+#-name "*~" -o -name "#*#": Filtra ficheiros que terminam em ~ ou que começam e terminam com #.
+#-print: Mostra o nome de cada ficheiro encontrado antes de o apagar.
