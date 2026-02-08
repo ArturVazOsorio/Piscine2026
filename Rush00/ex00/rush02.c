@@ -6,7 +6,7 @@
 /*   By: aantela- <aantela-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 16:52:39 by aantela-          #+#    #+#             */
-/*   Updated: 2026/01/31 17:40:18 by aantela-         ###   ########.fr       */
+/*   Updated: 2026/02/05 01:57:38 by artur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ void	rush(int x, int y)
 			else
 				ft_putchar(' ');
 		}
-		ft_putchar('\n');
 	}
+	ft_putchar('\n');
 }
