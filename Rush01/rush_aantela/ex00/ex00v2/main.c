@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: artur <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: aantela- <aantela-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/08 05:48:35 by artur             #+#    #+#             */
-/*   Updated: 2026/02/08 05:48:45 by artur            ###   ########.fr       */
+/*   Created: 2026/02/08 16:46:48 by aantela-          #+#    #+#             */
+/*   Updated: 2026/02/08 16:47:18 by aantela-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,27 +52,46 @@ int	**create_grid(void)
 	return (grid);
 }
 
+/* ** Valida o formato estrito: tamanho 31, padrao "N N N..."
+*/
+int	check_input(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	if (i != 31)
+		return (0);
+	i = 0;
+	while (str[i])
+	{
+		if (i % 2 == 0 && (str[i] < '1' || str[i] > '4'))
+			return (0);
+		if (i % 2 != 0 && str[i] != ' ')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+/* ** Aloca e preenche o array. Agora tem menos de 25 linhas.
+*/
 int	*parse_clues(char *str)
 {
 	int	*clues;
 	int	i;
-	int	j;
 
+	if (!check_input(str))
+		return (NULL);
 	clues = (int *)malloc(sizeof(int) * 16);
 	if (!clues)
 		return (NULL);
 	i = 0;
-	j = 0;
-	while (str[i] && j < 16)
+	while (i < 16)
 	{
-		if (str[i] >= '1' && str[i] <= '4')
-			clues[j++] = str[i] - '0';
+		clues[i] = str[i * 2] - '0';
 		i++;
-	}
-	if (j != 16)
-	{
-		free(clues);
-		return (NULL);
 	}
 	return (clues);
 }
@@ -88,8 +107,13 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	clues = parse_clues(argv[1]);
+	if (!clues)
+	{
+		ft_putstr("Error\n");
+		return (0);
+	}
 	grid = create_grid();
-	if (!clues || !grid || !solve(grid, clues, 0))
+	if (!grid || !solve(grid, clues, 0))
 		ft_putstr("Error\n");
 	else
 		print_grid(grid);
