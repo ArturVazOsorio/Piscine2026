@@ -1,0 +1,44 @@
+[global_config]
+  broadcast_default = off
+  enabled_plugins = CurrDirOpen, RunCmdOnMatchMenu, SaveLastSessionLayout, LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler
+[keybindings]
+  help = <Primary><Shift>F1
+[profiles]
+  [[default]]
+    background_darkness = 0.9
+    background_type = transparent
+    background_image = /home/artur/LivePaper/assets/test.gif
+    cursor_shape = underline
+    foreground_color = "#e01b24"
+    use_system_font = False
+    title_use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+      size = 1300, 600
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+  [[SaveLastSessionLayout]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:0
+      maximised = False
+      fullscreen = False
+      size = 900, 600
+      title = vim main.c
+      last_active_term = e581ddb4-89fe-4891-8a65-6bb337ac2899
+      last_active_window = True
+    [[[terminal1]]]
+      type = Terminal
+      parent = child0
+      order = 0
+      profile = default
+      uuid = e581ddb4-89fe-4891-8a65-6bb337ac2899
+      directory = /home/artur/Desktop/Piscine2026/Rush01/rush_aantela/ex00/ex00v2
+[plugins]
